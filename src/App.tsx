@@ -1,8 +1,10 @@
-import TicTacToe from "./Tic-Tac-Toe/index"
+import FilterableProduct from "./FilterableProduct";
+import TicTacToe from "./TicTacToe/index"
 
-export default function Game() {
+export default function Domes() {
 
   return <>
-    <TicTacToe />
+    {/* <TicTacToe /> */}
+    <FilterableProduct />
   </>;
 }
