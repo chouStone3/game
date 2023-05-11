@@ -40,7 +40,7 @@ const ProductTable = ({ products, searchText, inStockOnly }: { products: PRODUCT
     头部、类别行、product行
     */
     const cateGorys: string[] = [];
-    const rows: any[] = [];
+    const rows: PRODUCT[][] = [];
 
     products.forEach((product) => {
         if (product.name.toLowerCase().indexOf(searchText.toLowerCase()) === -1) return
@@ -48,13 +48,9 @@ const ProductTable = ({ products, searchText, inStockOnly }: { products: PRODUCT
         const index = cateGorys.indexOf(product.category)
         if (index === -1) {
             cateGorys.push(product.category)
-            rows.push([<ProductRow
-                product={product}
-                key={product.name} />])
+            rows.push([product])
         } else {
-            rows[index].push(<ProductRow
-                product={product}
-                key={product.name} />)
+            rows[index].push(product)
         }
     });
 
@@ -72,7 +68,11 @@ const ProductTable = ({ products, searchText, inStockOnly }: { products: PRODUCT
                         <ProductCategoryRow
                             category={cateGorys[index]}
                             key={cateGorys[index]} />
-                        {...item}
+                        {item.map((product, index) => {
+                            return <ProductRow
+                                product={product}
+                                key={product.name} />
+                        })}
                     </>
                 })}
             </tbody>

@@ -4,7 +4,8 @@ import TicTacToe from "./TicTacToe/index"
 export default function Domes() {
 
   return <>
-    {/* <TicTacToe /> */}
+    <TicTacToe />
+    <br></br>
     <FilterableProduct />
   </>;
 }
