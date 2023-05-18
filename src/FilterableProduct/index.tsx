@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import "./index.css"
 
 interface Iprops {
@@ -64,16 +64,16 @@ const ProductTable = ({ products, searchText, inStockOnly }: { products: PRODUCT
             </thead>
             <tbody>
                 {rows.map((item, index) => {
-                    return <>
+                    return <Fragment key={index}>
                         <ProductCategoryRow
                             category={cateGorys[index]}
-                            key={cateGorys[index]} />
+                        />
                         {item.map((product, index) => {
                             return <ProductRow
                                 product={product}
                                 key={product.name} />
                         })}
-                    </>
+                    </Fragment>
                 })}
             </tbody>
         </table>

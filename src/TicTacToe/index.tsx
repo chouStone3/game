@@ -79,11 +79,10 @@ export default function TicTacToe() {
       */
   const moves = squares.map((square, index) => {
     const description = index > 0 ? 'Go to move #' + index : 'Go to game start';
-    return <>
-      <li key={index}>
+    return <li key={index}>
         <button onClick={() => setCurrentStep(index)}>{description}</button>
       </li>
-    </>
+    
   })
 
   return <>
