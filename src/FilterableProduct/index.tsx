@@ -68,7 +68,7 @@ const ProductTable = ({ products, searchText, inStockOnly }: { products: PRODUCT
                         <ProductCategoryRow
                             category={cateGorys[index]}
                         />
-                        {item.map((product, index) => {
+                        {item.map((product) => {
                             return <ProductRow
                                 product={product}
                                 key={product.name} />
