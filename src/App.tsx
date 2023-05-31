@@ -1,17 +1,20 @@
 import FilterableProduct from "./FilterableProduct";
 import PragueReducer from "./Prague-reducer";
 import Prague from "./PragueItinerary";
-import TicTacToe from "./TicTacToe/index"
+import TicTacToe from "./TicTacToe/index";
+import ChatAPP from "./contactList-Chat";
 
 export default function Domes() {
 
   return <>
     <TicTacToe />
-    <br></br>
+    <br/>
     <FilterableProduct />
-    <br></br>
+    <br/>
     <Prague/>
-    <br></br>
+    <br/>
     <PragueReducer></PragueReducer>
+    <br/>
+    <ChatAPP/>
   </>;
 }
